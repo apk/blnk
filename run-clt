@@ -1,0 +1,2 @@
+#!/bin/sh
+while sleep 10; do ruby clt.rb; done
