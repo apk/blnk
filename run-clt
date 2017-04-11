@@ -1,2 +1,4 @@
 #!/bin/sh
+# Gem:
+#   gem install --user-install websocket-client-simple
 while sleep 10; do ruby clt.rb; done
