@@ -10,6 +10,12 @@ a='ws://soctestgit.verigy.net/msg/ws'
 a='ws://socrepo.advantest.com:3042/msg/ws'
 a='wss://beta.apk.li/msg/ws'
 
+def do_led(col,d)
+  g=$leds.delete_at(rand(3))
+  $leds.push(g)
+  $f.puts "0,#{col}#{g}#{d},0,0,0#{g}"
+end
+
 msgclt_run a do |a,d,t|
   if a == ['blnk']
     puts d.inspect
@@ -19,9 +25,7 @@ msgclt_run a do |a,d,t|
       if $' =~ /^,(\d+)/
 	d=$1
       end
-      g=$leds.delete_at(rand(3))
-      $leds.push(g)
-      $f.puts "0,#{col}#{g}#{d},0,0,0#{g}"
+      do_led(col,d)
     end
   end
 end
