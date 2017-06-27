@@ -15,12 +15,12 @@ msgclt_run a do |a,d,t|
     puts d.inspect
     if d =~ /\d+,\d+,\d+/
       col=$&
-      g=$leds.delete_at(rand(3))
-      $leds.push(g)
       d=50
       if $' =~ /^,(\d+)/
 	d=$1
       end
+      g=$leds.delete_at(rand(3))
+      $leds.push(g)
       $f.puts "0,#{col}#{g}#{d},0,0,0#{g}"
     end
   end
