@@ -6,6 +6,8 @@ $leds=['i','j','k','l','n','o','p']
 
 $f=File.open('/dev/ttyACM0','w')
 
+$f.puts '127D'
+
 a='ws://soctestgit.verigy.net/msg/ws'
 a='ws://socrepo.advantest.com:3042/msg/ws'
 a='wss://beta.apk.li/msg/ws'
