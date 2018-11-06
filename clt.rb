@@ -6,7 +6,14 @@ $leds=['i','j','k','l','n','o','p']
 
 $f=File.open('/dev/ttyACM0','w')
 
-$f.puts '127D'
+sleep 1
+
+$leds.each do |g|
+  $f.puts "64,16,0,8#{g}"
+  sleep 0.1
+end
+
+$f.puts ',127D'
 
 a='ws://soctestgit.verigy.net/msg/ws'
 a='ws://socrepo.advantest.com:3042/msg/ws'
